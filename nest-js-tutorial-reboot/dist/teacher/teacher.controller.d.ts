@@ -1,4 +1,4 @@
 export declare class teachersController {
     getTeachers(): string;
-    getSingleTeacher(): string;
+    getSingleTeacher(teacherId: string): string;
 }

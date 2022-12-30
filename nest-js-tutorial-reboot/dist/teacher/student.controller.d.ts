@@ -1,4 +1,4 @@
 export declare class studentsTeacherController {
-    getStudents(): string;
-    updateStudentTeacher(): string;
+    getStudents(teacherId: string): string;
+    updateStudentTeacher(teacherId: string, studentId: string): string;
 }
