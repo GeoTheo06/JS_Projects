@@ -1,4 +1,5 @@
+import { FindTeacherResponseDto } from "./dto/teacher.dto";
 export declare class teachersController {
-    getTeachers(): string;
-    getSingleTeacher(teacherId: string): string;
+    getTeachers(): FindTeacherResponseDto[];
+    getSingleTeacher(teacherId: string): FindTeacherResponseDto;
 }

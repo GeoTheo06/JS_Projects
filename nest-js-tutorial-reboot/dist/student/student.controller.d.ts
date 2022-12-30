@@ -1,6 +1,7 @@
+import { CreateStudentDto, FindStudentResponseDto, StudentResponseDto, UpdateStudentDto } from "./dto/student.dto";
 export declare class StudentController {
-    getStudents(): string;
-    getStudentById(studentId: string): string;
-    createStudent(body: any): string;
-    updateStudent(studentId: string, body: any): string;
+    getStudents(): FindStudentResponseDto[];
+    getStudentById(studentId: string): FindStudentResponseDto;
+    createStudent(body: CreateStudentDto): StudentResponseDto;
+    updateStudent(studentId: string, body: UpdateStudentDto): StudentResponseDto;
 }

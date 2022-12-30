@@ -1,4 +1,5 @@
+import { FindStudentResponseDto, StudentResponseDto } from "src/student/dto/student.dto";
 export declare class studentsTeacherController {
-    getStudents(teacherId: string): string;
-    updateStudentTeacher(teacherId: string, studentId: string): string;
+    getStudents(teacherId: string): FindStudentResponseDto[];
+    updateStudentTeacher(teacherId: string, studentId: string): StudentResponseDto;
 }

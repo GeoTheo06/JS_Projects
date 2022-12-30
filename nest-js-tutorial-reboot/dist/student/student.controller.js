@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StudentController = void 0;
 const common_1 = require("@nestjs/common");
+const student_dto_1 = require("./dto/student.dto");
 let StudentController = class StudentController {
     getStudents() {
         return "All students";
@@ -32,29 +33,29 @@ __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Array)
 ], StudentController.prototype, "getStudents", null);
 __decorate([
     (0, common_1.Get)("/:studentId"),
     __param(0, (0, common_1.Param)("studentId")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", student_dto_1.FindStudentResponseDto)
 ], StudentController.prototype, "getStudentById", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [student_dto_1.CreateStudentDto]),
+    __metadata("design:returntype", student_dto_1.StudentResponseDto)
 ], StudentController.prototype, "createStudent", null);
 __decorate([
     (0, common_1.Put)("/:studentId"),
     __param(0, (0, common_1.Param)("studentId")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [String, student_dto_1.UpdateStudentDto]),
+    __metadata("design:returntype", student_dto_1.StudentResponseDto)
 ], StudentController.prototype, "updateStudent", null);
 StudentController = __decorate([
     (0, common_1.Controller)("students")
