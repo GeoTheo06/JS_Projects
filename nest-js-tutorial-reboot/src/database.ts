@@ -1,7 +1,7 @@
 export let students = [
 	{
 		id: "1",
-		name: "ANthony",
+		name: "Anthony",
 		teacher: "1",
 	},
 	{
