@@ -15,12 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.teachersController = void 0;
 const common_1 = require("@nestjs/common");
 const teacher_dto_1 = require("./dto/teacher.dto");
+const teacher_service_1 = require("./teacher.service");
 let teachersController = class teachersController {
-    getTeachers() {
-        return "get Teachers";
+    constructor(teacherService) {
+        this.teacherService = teacherService;
     }
-    getSingleTeacher(teacherId) {
-        return `get teacher with the id of ${teacherId}`;
+    getTeachers() {
+        return this.teacherService.getTeachers();
+    }
+    getTeacherById(teacherId) {
+        return this.teacherService.getTeacherById(teacherId);
     }
 };
 __decorate([
@@ -35,9 +39,10 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", teacher_dto_1.FindTeacherResponseDto)
-], teachersController.prototype, "getSingleTeacher", null);
+], teachersController.prototype, "getTeacherById", null);
 teachersController = __decorate([
-    (0, common_1.Controller)("teachers")
+    (0, common_1.Controller)("teachers"),
+    __metadata("design:paramtypes", [teacher_service_1.TeacherService])
 ], teachersController);
 exports.teachersController = teachersController;
 //# sourceMappingURL=teacher.controller.js.map
