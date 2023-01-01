@@ -13,13 +13,14 @@ exports.GoogleStrategy = void 0;
 const passport_1 = require("@nestjs/passport");
 const passport_google_oauth20_1 = require("passport-google-oauth20");
 const dotenv_1 = require("dotenv");
+const credentials_1 = require("./credentials");
 const common_1 = require("@nestjs/common");
 (0, dotenv_1.config)();
 let GoogleStrategy = class GoogleStrategy extends (0, passport_1.PassportStrategy)(passport_google_oauth20_1.Strategy, "google") {
     constructor() {
         super({
-            clientID: "960855895456-drkbf3qt7i2g6j00buob7l7q1amtl58p.apps.googleusercontent.com",
-            clientSecret: "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",
+            clientID: credentials_1.id,
+            clientSecret: credentials_1.secret,
             callbackURL: "http://localhost:3000/google/redirect",
             scope: ["email", "profile"],
         });
