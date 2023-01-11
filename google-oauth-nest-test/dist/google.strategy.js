@@ -21,7 +21,7 @@ let GoogleStrategy = class GoogleStrategy extends (0, passport_1.PassportStrateg
         super({
             clientID: credentials_1.id,
             clientSecret: credentials_1.secret,
-            callbackURL: "http://localhost:3000/google/redirect",
+            callbackURL: "http://localhost:3001/api/auth/callback/google",
             scope: ["email", "profile"],
         });
     }

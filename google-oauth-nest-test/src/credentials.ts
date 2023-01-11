@@ -1,2 +1,3 @@
-export let id = "";
+export let id =
+	"";
 export let secret = "";
